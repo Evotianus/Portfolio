@@ -8,13 +8,56 @@ html, body {
 :root {
     --color-bg1: rgb(79, 147, 182);
     --color-bg2: rgb(241, 165, 254);
-    --color1: rgb(145, 231, 255);
-    --color2: rgb(241, 165, 254);
-    --color3: rgb(79, 147, 182);
-    --color4: rgb(248, 207, 255);
-    --color5: rgb(162, 209, 217);
+    --color1: 145, 231, 255;
+    --color2: 241, 165, 254;
+    --color3: 79, 147, 182;
+    --color4: 248, 207, 255;
+    --color5: 162, 209, 217;
+    --color-interactive: 128, 0, 255;
     --circle-size: 80%;
     --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    50% {
+        transform: translateX(50%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .gradient-bg {
@@ -37,12 +80,77 @@ html, body {
 
     .g1 {
         position: absolute;
-        background: radial-gradient(circle at center, rgba(145, 231, 255, 0.8) 0, rgba(145, 231, 255, 0) 40%) no-repeat;
+        background: radial-gradient(circle at center, rgba(var(--color1), 1) 0, rgba(var(--color1), 0) 40%) no-repeat;
         mix-blend-mode: var(--blending);
         width: var(--circle-size);
         height: var(--circle-size);
         top: calc(50% - var(--circle-size) / 2);
         left: calc(50% - var(--circle-size) / 2);
+        transform-origin: center center;
+        animation: moveVertical 30s ease infinite;
         opacity: 1;
+    }
+
+    .g2 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 1) 0, rgba(var(--color2), 0) 40%) no-repeat;
+        mix-blend-mode: var(--blending);
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(30% - var(--circle-size) / 2);
+        left: calc(80% - var(--circle-size) / 2);
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 20s reverse infinite;
+        opacity: 1;
+    }
+
+    .g3 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color3), 1) 0, rgba(var(--color3), 0) 40%) no-repeat;
+        mix-blend-mode: var(--blending);
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(70% - var(--circle-size) / 2);
+        left: calc(60% - var(--circle-size) / 2);
+        transform-origin: calc(50% + 400px);
+        animation: moveInCircle 40s linear infinite;
+        opacity: 1;
+    }
+
+    .g4 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color4), 1) 0, rgba(var(--color4), 0) 40%) no-repeat;
+        mix-blend-mode: var(--blending);
+        width: calc(var(--circle-size) + 20%);
+        height: calc(var(--circle-size) + 20%);
+        top: calc(60% - var(--circle-size) / 2);
+        left: calc(20% - var(--circle-size) / 2);
+        transform-origin: calc(50% - 200px);
+        animation: moveHorizontal 40s ease infinite;
+        opacity: 1;
+    }
+
+    .g5 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color5), 1) 0, rgba(var(--color5), 0) 40%) no-repeat;
+        mix-blend-mode: var(--blending);
+        width: calc(var(--circle-size) - 20%);
+        height: calc(var(--circle-size) - 20%);
+        top: calc(40% - var(--circle-size) / 2);
+        left: calc(40% - var(--circle-size) / 2);
+        transform-origin: calc(50% + 200px);
+        animation: moveInCircle 20s reverse infinite;
+        opacity: 1;
+    }
+
+    .interactive {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0) 40%) no-repeat;
+        mix-blend-mode: var(--blending);
+        width: 50%;
+        height: 50%;
+        top: -25%;
+        left: -25%;
+        opacity: 0.6;
     }
 }
