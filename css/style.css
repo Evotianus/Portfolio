@@ -569,7 +569,7 @@ body,
 			justify-content: end;
 			position: relative;
 			min-height: 13em;
-			background: red;
+			background: rgba(255, 255, 255, 0.5);
 			border-radius: 30px;
 
 			.project-link {
@@ -606,7 +606,7 @@ body,
 		}
 
 		.project-item:nth-child(1) {
-			background: url("../assets/project-1.jpg");
+			/* background: url("../assets/project-1.jpg"); */
 			background-size: cover;
 		}
 	}
