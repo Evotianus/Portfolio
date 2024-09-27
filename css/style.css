@@ -341,7 +341,7 @@ body,
   box-shadow: 0 0 20px 3px rgba(var(--color-secondary), 0.4);
   border-radius: 50px;
   padding: 2.5em;
-  gap: 2.5em;
+  gap: 2em;
   grid-area: profile;
 
   p {
@@ -350,7 +350,7 @@ body,
 
   .profile-picture img {
     border-radius: 40px;
-    width: 18em;
+    width: 15.75em;
   }
 
   .profile-detail {
